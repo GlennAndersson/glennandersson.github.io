@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(47, 65, 83);
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    color:rgb(0, 0, 0);
+    text-shadow: 3px 3px 5px rgb(37, 147, 0);
+}
+
+h2 {
+    text-align: center;
+    color: rgb(236, 230, 230);
+    text-shadow: 2px 2px 5px rgb(37, 147, 0);
+    margin-top: 4rem;
+}
+
+#bing {
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.2rem;
+    max-width: 40rem;
+    max-height: 10rem;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;   
+}
+
+#map {
+    border-radius: 50px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.2rem;
+    /* max-width: 40rem;
+    max-height: 10rem; */
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#video {
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 0.2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
