@@ -53,3 +53,24 @@ h2 {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+/* Minimum aspect ratio */
+@media (min-aspect-ratio: 8/5) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 3/2) {
+  body {
+    background-color: blue; 
+  }
+}
+
+/* Exact aspect ratio, put it at the bottom to avoid override*/
+@media (aspect-ratio: 1/1) {
+  body {
+    background-color: black;
+  }
+}
