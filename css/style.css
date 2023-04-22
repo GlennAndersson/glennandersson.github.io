@@ -25,7 +25,8 @@ h2 {
     max-width: 40rem;
     max-height: 10rem;
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;   
 }
@@ -38,7 +39,8 @@ h2 {
     /* max-width: 40rem;
     max-height: 10rem; */
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
