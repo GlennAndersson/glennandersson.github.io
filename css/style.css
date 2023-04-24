@@ -17,18 +17,38 @@ h2 {
     margin-top: 4rem;
 }
 
-#bing {
-    border-radius: 25px;
-    border-style: solid;
-    border-color: black;
-    border-width: 0.2rem;
-    max-width: 40rem;
-    max-height: 10rem;
-    display: block;
+.container {
+    display: flex;
+    /* background-color: black; */
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;   
+
+}
+
+#video {
+    position: relative;
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 0.2rem;
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+}
+
+
+#bing {
+ 
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 0.2rem;
+    width: 95%;
+    max-height: 10rem;
+    max-width: 650px;
+    margin: auto;
 }
 
 #map {
@@ -36,36 +56,17 @@ h2 {
     border-style: solid;
     border-color: black;
     border-width: 0.2rem;
-    /* max-width: 40rem;
-    max-height: 10rem; */
-    display: block;
-    margin-left: auto;
+    max-width: 650px;
+    margin: auto;
+    /* margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-#video {
-    border-radius: 1rem;
-    border-style: solid;
-    border-width: 0.2rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; */
 }
 
 @media (max-aspect-ratio: 3/2) {
-    body {
-        background-color:  rgb(0, 100, 0);
-    }
-
-    #video {
-        width: 100%;
-    }
 
     #map {
-        width: 100%;
+        width: 95%;
     }
 }
