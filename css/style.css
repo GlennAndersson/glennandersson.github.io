@@ -56,17 +56,8 @@ h2 {
     border-style: solid;
     border-color: black;
     border-width: 0.2rem;
-    max-width: 650px;
+    max-height: 20rem;
+    max-width: 20rem;
+    width: 95%;
     margin: auto;
-    /* margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem; */
-}
-
-@media (max-aspect-ratio: 3/2) {
-
-    #map {
-        width: 95%;
-    }
 }
