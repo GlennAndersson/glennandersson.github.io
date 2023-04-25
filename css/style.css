@@ -61,11 +61,11 @@ h2 {
     width: 90%;
     max-width: 500px;
     margin: auto;
+    box-shadow: 0px 0px 12px rgba(191, 0, 255, 0.689);
 }
 
 
-#bing {
- 
+#bing { 
     border-radius: 1rem;
     border-style: solid;
     border-width: 0.2rem;
@@ -73,6 +73,7 @@ h2 {
     max-height: 10rem;
     max-width: 650px;
     margin: auto;
+    box-shadow: 0px 0px 12px rgba(191, 0, 255, 0.689);
 }
 
 #map {
@@ -84,4 +85,6 @@ h2 {
     max-width: 20rem;
     width: 90%;
     margin: auto;
+    box-shadow: 0px 0px 12px rgba(191, 0, 255, 0.689);
+
 }
