@@ -1,6 +1,5 @@
 body {
     background-color: rgb(35, 49, 62);
-    /* background-color: rgb(26, 26, 46); */
     margin: 0;
 }
 
@@ -31,7 +30,6 @@ h2 {
     top: -3px;
     z-index: 1;   
     border-radius: 0px 0px 1rem 1rem;
-    /* border: 2px rgba(191, 0, 255, 689) solid; */
     box-shadow: 0px 0px 12px rgba(191, 0, 255, 0.689);
 }
 
@@ -42,6 +40,30 @@ h2 {
     color:rgb(255, 255, 255);
     text-shadow: 3px 3px 4px rgb(191, 0, 255, 689);
 }
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 3rem;
+    margin-top: 3rem;
+    border-radius: 1rem 1rem 0rem 0rem;
+    box-shadow: 0px 0px 12px rgba(191, 0, 255, 0.689);
+
+}
+
+#footer-text {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 300;
+    bottom: 0;
+    color:rgb(255, 255, 255);
+    text-shadow: 3px 3px 4px rgb(191, 0, 255, 689);
+}
+
 .container {
     display: flex;
     flex-direction: column;
