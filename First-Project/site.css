@@ -28,6 +28,13 @@ main{
     flex: 1;
 }
 
+.back-flex {
+    position: absolute;
+    margin-left: 1rem;
+    padding: 10px;
+    border: 2px white solid;
+}
+
 .home-flex {
     width: 100px;
     font-size: 19px;
