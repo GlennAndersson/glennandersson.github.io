@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(209, 209, 209);
+}
+
+main{
+    flex-grow: 1;
+}
+
+.hero-image-div {
+    width: 100%;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+.black-border {
+    height: 60px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-menu {
+    flex: 1;
+}
+
+.home-flex {
+    width: 100px;
+    font-size: 19px;
+}
+.menu-flex {
+    width: 100px;
+    font-size: 19px;
+}
+
+.about-flex {
+    width: 125px;
+    font-size: 19px;
+}
+
+.feast-link {
+    text-decoration: none;
+    color: white;
+}
+.menu-link {
+    text-decoration: none;
+    color: white;
+}
+.about-link {
+    text-decoration: none;
+    color: white;
+}
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-text {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.centered-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 75px;
+}
+
+.centered-text-about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 75px;
+}
+.centered-undertext {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    margin-top: 10px;
+}
+.centered-undertext-us {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+}
+.white-flexbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.headline {
+    font-size: 35px;
+    font-weight: bold;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.underline {
+    font-size: 20px;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.flex-menu-two {
+    flex: 1;
+}
+.flex-menu-two-end {
+    flex: 1;
+}
+.white-flexbox-two {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-menu-three {
+    flex: 1;
+}
+.flex-menu-three-end {
+    flex: 1;
+}
+.grid-feast {
+    display: grid;
+    max-height: 300px;
+    justify-items: center;
+}
+.grid-feast-two {
+    display: grid;
+    height: 100px;
+    justify-items: center;
+}
+
+.picture-text{
+    font-size: 18px;
+    margin-top: 10px;
+}
+.info-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.image{
+    border-radius: 100%;
+}
+.picture-title{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer{
+    display: flex;
+    background-color: black;
+    height: 60px;
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    font-style: italic;
+}
+
+.menu-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: auto;
+    justify-items: center;
+}
+
+.menu-grid-titel-first{
+    font-size: 35px;
+}
+
+.menu-grid-titel{
+    font-size: 35px;
+}
+
+.h3-title{
+    margin-bottom: 25px;
+    font-size: 40px;
+}
+
+.menu-grid-undertext{
+    margin: 0;
+    font-size: 18px;
+}
+
+li{
+    margin-bottom: 10px;
+    margin-left: -30px;
+    list-style-type: none;
+}   
