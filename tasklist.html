@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/taskstyle.css">
+</head>
+<body>
+    <main>
+        <h1>Tasklist</h1>
+        <div id="back">
+            <a href="index.html">Back to site</a>
+        </div>
+        <p>saved in local storage</p>
+        <form id="taskForm" action="" method="POST">
+            <div>
+                <label for="taskInput">Task: </label>
+                <input id="taskInput" type="text" name="taskInput" required>
+            </div>
+            <div>
+                <button id="submit" type="submit">Add Task</button>
+                <button id="clearForm" type="reset">Clear Form</button>
+                <button id="remove" type="button">Remove Completed Tasks</button>
+            </div>
+        </form>
+        <div class="container">
+            <div id="taskListDiv"> Task list
+                <ul id="taskList">
+                </ul>
+            </div>
+            <div  id="completedTaskListDiv"> Completed tasks
+                <ul id="completedTaskList">
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="js/taskapp.js"></script>
+    <script>
+        app.todoStartup();
+    </script>
+</body>
+</html>

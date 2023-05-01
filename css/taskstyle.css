@@ -1,0 +1,63 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    background-color: rgb(136, 136, 136);
+    text-align: center;
+}
+
+
+p {
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+label {
+    font-size: 1rem;
+}
+
+input {
+    font-size: 0.75rem;
+}
+
+button {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+
+ul {
+    list-style-type: none;
+    line-height: 1.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 50%;
+    min-width: 300px;
+    margin: auto;
+}
+
+#taskListDiv {
+    margin-top: 1rem;
+}
+
+#completedTaskListDiv {
+    margin-top: 1rem;
+}
+
+.completedTask {
+    text-decoration: line-through;
+}
+
+#back {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 400px;
+}
