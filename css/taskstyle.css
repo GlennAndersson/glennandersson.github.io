@@ -155,3 +155,39 @@ li {
     padding: 10px;
     border: 2px rgba(255, 255, 255, 0.336) solid;
 }
+
+@media screen and (max-aspect-ratio: 3/3) {
+    h1 {
+        font-size: 60px;
+    }
+
+    #buttons {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    #remove {
+        height: 5.5rem;
+    }
+
+    input {
+        font-size: 2rem;
+        width: 30rem;
+        height: 2.75rem;
+    }
+    button {
+        font-size: 1.5rem;
+        margin: 0.75rem;
+        width: 12rem;
+        height: 2.5rem;
+    }
+
+    .taskHeadlines, .taskHeadlines-two {
+        font-size: 2rem;
+    }
+
+    #back {
+        font-size: 1.5rem;
+    }
+}
