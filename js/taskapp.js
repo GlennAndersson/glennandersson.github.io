@@ -143,18 +143,32 @@
 
     function addTask(e) {
         e.preventDefault();
-        {
-            if (pageItems.taskInput.value === "") {
-                alert("Input field cannot be empty!");
-            } else {
-                const li = document.createElement("li");
-                li.innerText = pageItems.taskInput.value;
-                pageItems.taskList.appendChild(li);
-                pageItems.taskInput.value = "";
-                saveToStorage();
-                saveCompletedToStorage();
-                clearOldStorage();
-            }
-        }
+
+        const li = document.createElement("li");
+        li.innerText = pageItems.taskInput.value;
+        pageItems.taskList.appendChild(li);
+        pageItems.taskInput.value = "";
+        saveToStorage();
+        saveCompletedToStorage();
+        clearOldStorage();
     }
+
+
+    // KEEP THIS SECOND VERSION IF THE ORIGINAL STARTS TO ADD WHEN EMPTY
+    // function addTask(e) {
+    //     e.preventDefault();
+    //     {
+    //         if (pageItems.taskInput.value === "") {
+    //             alert("Input field cannot be empty!");
+    //         } else {
+    //             const li = document.createElement("li");
+    //             li.innerText = pageItems.taskInput.value;
+    //             pageItems.taskList.appendChild(li);
+    //             pageItems.taskInput.value = "";
+    //             saveToStorage();
+    //             saveCompletedToStorage();
+    //             clearOldStorage();
+    //         }
+    //     }
+    // }
 })(window.app = window.app || {});

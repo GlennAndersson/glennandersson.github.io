@@ -7,31 +7,33 @@
 </head>
 <body>
     <main>
-        <h1>Tasklist</h1>
+        <h1>TASKLIST</h1>
         <div id="back">
             <a href="index.html">Back to site</a>
         </div>
-        <p>saved in local storage</p>
+        <!-- <p>saved in local storage</p>
         <p>add, remove and clear tasks</p>
-        <p>click on added tasks to mark them complete</p>
+        <p>click on added tasks to mark them complete</p> -->
         <form id="taskForm" action="" method="POST">
-            <div>
-                <label for="taskInput">Task: </label>
-                <input id="taskInput" type="text" name="taskInput" required>
+            <div class="container">
+                <!-- <label for="taskInput">Task: </label> -->
+                <input id="taskInput" type="text" name="taskInput" placeholder="Add Task" required>
             </div>
             <div>
-                <button id="submit" type="submit">Add Task</button>
+                <button id="submit" type="submit">Submit</button>
                 <button id="remove" type="button">Remove Completed Tasks</button>
                 <button id="clearForm" type="reset">Clear Form</button>
             </div>
         </form>
         <div class="container">
-            <div id="taskListDiv"> Task list
-                <ul id="taskList">
+            <div class="taskHeadlines">ACTIVE</div>
+            <div class="taskHeadlines-two">COMPLETED</div>
+        </div>
+        <div class="container">
+            <div id="taskListDiv"><ul id="taskList">
                 </ul>
             </div>
-            <div  id="completedTaskListDiv"> Completed tasks
-                <ul id="completedTaskList">
+            <div  id="completedTaskListDiv"><ul id="completedTaskList">
                 </ul>
             </div>
         </div>

@@ -3,9 +3,21 @@ html {
 }
 
 body {
-    background-color: rgb(136, 136, 136);
+    background: linear-gradient(180deg, #00386C 0%, #000000 100%);
     text-align: center;
+    background-attachment: fixed;
 }
+
+h1 {
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #08A4D5;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} 
 
 
 p {
@@ -18,12 +30,25 @@ label {
 }
 
 input {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
+    width: 20rem;
+    height: 1.75rem;
+    text-align: center;
+    background: linear-gradient(180deg, #E3E3E3 -52.63%, rgba(238, 238, 238, 0.925) 100%);
+    border: 1px solid #036BCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
 }
 
 button {
     font-size: 0.75rem;
-    margin-top: 0.5rem;
+    margin: 0.75rem;
+    width: 10rem;
+    height: 1.5rem;
+    background: linear-gradient(180deg, #E3E3E3 -52.63%, rgba(247, 194, 0, 0.712) 100%);
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
 }
 
 
@@ -32,21 +57,91 @@ ul {
     line-height: 1.5rem;
 }
 
+li {
+    display: flex;
+    text-align: left;
+}
+
 .container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 50%;
+    max-width: 45rem;
     min-width: 300px;
     margin: auto;
+    /* border-color: aqua;
+    border-style: solid; */
 }
 
 #taskListDiv {
+    display: flex;
     margin-top: 1rem;
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    width: 15rem;
+    flex: 1;
+    margin: 1rem;
+
+    color: #08A4D5;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0.311196) 51.5%, rgba(0, 0, 0, 0.108829) 92.21%, rgba(0, 0, 0, 0) 188.69%);
+    border: 1px solid #036BCB;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+}
+
+.taskHeadlines {
+    margin-top: 1rem;
+    padding-left: 2rem;
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    text-decoration-line: underline;
+
+    color: #08A4D5;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.taskHeadlines-two {
+    margin-top: 1rem;
+    padding-left: 2rem;
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    text-decoration-line: underline;
+
+    color: #08A4D5;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #completedTaskListDiv {
-    margin-top: 1rem;
+    display: flex;
+    margin: 1rem;
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    width: 15rem;
+    flex: 1;
+
+    color: #08A4D5;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0.311196) 51.5%, rgba(0, 0, 0, 0.108829) 92.21%, rgba(0, 0, 0, 0) 188.69%);
+    border: 1px solid #036BCB;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
 }
 
 .completedTask {
@@ -58,5 +153,5 @@ ul {
     top: 0.5rem;
     left: 0.5rem;
     padding: 10px;
-    border: 2px rgb(0, 0, 0) solid;
+    border: 2px rgba(255, 255, 255, 0.336) solid;
 }
