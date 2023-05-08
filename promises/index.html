@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <h1>Promises Demo</h1>
+        <a href="../index.html" id="back">Back to site</a>
+        <br>
+        <button id="loadData" type="button">Load the Data</button>
+        <button id="refreshData" type="button">Refresh the Data</button>
+        <div id="wait-indicator">
+            <img id="gif" src="ezgif-3-5bff55f510.gif" alt="Bunny waiting gif">
+            <p id="wait">Please wait...</p>
+        </div>
+        <div id="container">
+            <h2>Console Log</h2>
+            <div>
+                <p id="logger"></p>
+            </div>
+        </div>
+        <div id="dim"></div>
+    </main>
+    <script src="js/app.js"></script>
+    <script>
+        app.promisesStartup();
+    </script>
+</body>
+</html>
