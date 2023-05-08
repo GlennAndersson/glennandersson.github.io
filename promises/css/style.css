@@ -92,4 +92,9 @@ button {
         top: 0rem;
         left: 0rem;
     }
+
+    #logger {
+        font-size: 1rem;
+    } 
+
 }
