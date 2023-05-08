@@ -167,3 +167,11 @@ a {
     border-color: rgb(0, 0, 0);
     box-shadow: 0px 0px 12px rgba(191, 0, 255, 0.689);
 }
+
+@media screen and (max-aspect-ratio: 3/3) { 
+      
+#header-text {
+    font-size: 1.25rem; 
+} 
+  
+}
