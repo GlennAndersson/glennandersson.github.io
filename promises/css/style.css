@@ -82,3 +82,14 @@ button {
     font-size: 1.5rem;
     margin-top: 2rem;
 }
+
+@media screen and (max-aspect-ratio: 3/3) {
+    
+    #back {
+        position: relative;
+        font-size: 0.75rem;
+        padding: 0.2rem;
+        top: 0rem;
+        left: 0rem;
+    }
+}
