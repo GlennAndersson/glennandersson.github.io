@@ -175,12 +175,12 @@ a {
         font-size: 1.7rem; 
     } 
     #flexOne{
-        margin-right: 2rem;
+        margin-right: 1rem;
         margin-left: 4rem;
     }
 
     #flexThree{
         margin-right: 3.25rem;
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 }
