@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/taskstyle.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/taskstyle.css" />
+  </head>
+  <body>
     <main>
-        <h1>TASKLIST</h1>
-        <div id="back">
-            <a href="index.html">Back to site</a>
-        </div>
-        <!-- <p>saved in local storage</p>
+      <h1>TASKLIST</h1>
+      <div id="back">
+        <a href="index.html">Back to site</a>
+      </div>
+      <!-- <p>saved in local storage</p>
         <p>add, remove and clear tasks</p>
         <p>click on added tasks to mark them complete</p> -->
-        <form id="taskForm" action="" method="POST">
-            <div class="container">
-                <!-- <label for="taskInput">Task: </label> -->
-                <input id="taskInput" type="text" name="taskInput" placeholder="Add Task" required>
-            </div>
-            <div id="buttons">
-                <button id="submit" type="submit">Submit</button>
-                <button id="remove" type="button">Remove Completed</button>
-                <button id="clearForm" type="reset">Clear Form</button>
-            </div>
-        </form>
+      <form id="taskForm" action="" method="POST">
         <div class="container">
-            <div class="taskHeadlines">ACTIVE</div>
-            <div class="taskHeadlines-two">COMPLETED</div>
+          <!-- <label for="taskInput">Task: </label> -->
+          <input
+            id="taskInput"
+            type="text"
+            name="taskInput"
+            placeholder="Add Task"
+            required
+          />
         </div>
-        <div class="container">
-            <div id="taskListDiv"><ul id="taskList">
-                </ul>
-            </div>
-            <div  id="completedTaskListDiv"><ul id="completedTaskList">
-                </ul>
-            </div>
+        <div id="buttons">
+          <button id="submit" type="submit">Submit</button>
+          <button id="remove" type="button">Remove Completed</button>
+          <button id="clearForm" type="reset">Clear Form</button>
         </div>
+      </form>
+      <div class="container">
+        <div class="taskHeadlines">ACTIVE</div>
+        <div class="taskHeadlines-two">COMPLETED</div>
+      </div>
+      <div class="container">
+        <div id="taskListDiv"><ul id="taskList"></ul></div>
+        <div id="completedTaskListDiv"><ul id="completedTaskList"></ul></div>
+      </div>
     </main>
     <script src="js/taskapp.js"></script>
     <script>
-        app.todoStartup();
+      app.todoStartup();
     </script>
-</body>
+  </body>
 </html>
