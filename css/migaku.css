@@ -1,6 +1,7 @@
 body {
   background: linear-gradient(180deg, #26006c 0%, #000000 100%);
   margin: 0;
+  height: 100vh;
 }
 
 h1 {
@@ -16,14 +17,34 @@ h1 {
 
 h2 {
   text-align: center;
-  background: linear-gradient(to top, rgb(0, 217, 255), rgb(0, 38, 255));
+  background: linear-gradient(to top, rgb(0, 217, 255), rgb(0, 98, 255));
   -webkit-background-lip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  text-shadow: 1px 1px 1px rgba(0, 238, 255, 0.862);
+  /* text-shadow: 1px 1px 0px rgba(0, 238, 255, 0.862); */
   margin-top: 4rem;
   font-size: 2rem;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
+}
+
+.charts-card {
+  margin-bottom: 20px;
+  padding: 25px;
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -104,7 +125,6 @@ a {
   flex-direction: row;
   justify-content: space-around;
   height: 100vh;
-  max-width: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
