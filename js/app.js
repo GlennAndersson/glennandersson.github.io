@@ -1,3 +1,85 @@
+// async function getWordsData() {
+//   try {
+//     const response = await fetch(
+//       "https://www.glennandersson.com/Migaku-word-count/words.json"
+//     );
+//     const data = await response.json();
+//     return data.map((item) => {
+//       return {
+//         date: item.Date, // assuming the JSON includes a 'Date' field
+//         words: item.Words,
+//       };
+//     });
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//   }
+// }
+
+// getWordsData().then((wordsData) => {
+//   options.series[0].data = wordsData.map((item) => item.words);
+//   options.xaxis.categories = wordsData.map((item) => item.date);
+//   chart.updateSeries(options.series);
+// });
+
+async function getWordsArray() {
+  try {
+    const response = await fetch(
+      "https://www.glennandersson.com/Migaku-word-count/words.json"
+    );
+    const data = await response.json();
+    const jsonData = JSON.stringify(data, null, 4);
+    return data.map((item) => item.Words);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+getWordsArray().then((wordsArray) => {
+  options.series[0].data = wordsArray;
+  chart.updateSeries(options.series);
+});
+
+async function getDatesArray() {
+  try {
+    const response = await fetch(
+      "https://www.glennandersson.com/Migaku-word-count/words.json"
+    );
+    const data = await response.json();
+    const jsonData = JSON.stringify(data, null, 4);
+    return data.map((item) => item.Date);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+getDatesArray().then((datesArray) => {
+  options.xaxis.categories = datesArray;
+  chart.updateOptions(options);
+});
+
+//put this into the API
+// const dates = [
+//   {
+//     Date: "2019-09-12",
+//   },
+//   {
+//     Date: "2019-09-14",
+//   },
+//   {
+//     Date: "2019-09-15",
+//   },
+//   {
+//     Date: "2019-09-16",
+//   },
+//   {
+//     Date: "2019-09-18",
+//   },
+// ];
+
+// dates.map((date) => date.Date)
+
+// console.log(dates);
+
 var options = {
   series: [
     {
@@ -32,15 +114,15 @@ var options = {
   stroke: {
     curve: "smooth",
   },
-  theme: {
-    mode: "light",
-    monochrome: {
-      enabled: true,
-      color: "#008FFB",
-      shadeTo: "light",
-      shadeIntensity: 0.65,
-    },
-  },
+  // theme: {
+  //   mode: "dark",
+  //   monochrome: {
+  //     enabled: true,
+  //     color: "#008FFB",
+  //     shadeTo: "dark",
+  //     shadeIntensity: 0.65,
+  //   },
+  // },
   fill: {
     type: "gradient",
     gradient: {
@@ -177,13 +259,7 @@ var options = {
         cssClass: "apexcharts-xaxis-label",
       },
     },
-    categories: [
-      "2019-09-12",
-      "2019-09-14",
-      "2019-09-15",
-      "2019-09-16",
-      "2019-09-18",
-    ],
+    categories: [],
   },
   tooltip: {
     x: {
@@ -195,7 +271,6 @@ var options = {
       fontFamily: undefined,
     },
   },
-
   // tooltip: {
   //   enabled: true,
   //   enabledOnSeries: undefined,
@@ -246,25 +321,3 @@ var options = {
 
 var chart = new ApexCharts(document.querySelector("#area-chart"), options);
 chart.render();
-
-// var url = "https://www.glennandersson.com/Migaku-word-count/words.json";
-
-// $.getJSON(url, function (response) {
-//   chart.updateSeries([
-//     {
-//       name: "Sales",
-//       data: response,
-//     },
-//   ]);
-// });
-
-fetch("https://www.glennandersson.com/Migaku-word-count/words.json")
-  .then((response) => response.json())
-  .then((data) => {
-    options.series[0].data = data;
-    chart.updateSeries(options.series);
-  })
-  .then(console.log(options.series))
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-  });
