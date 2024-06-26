@@ -47,9 +47,8 @@ h2 {
 
 .charts-card {
   margin-bottom: 20px;
-  margin-left: 5rem;
-  margin-right: 5rem;
   padding: 25px;
+  padding-left: 0px;
 }
 
 .chart-title {
