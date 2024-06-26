@@ -27,6 +27,15 @@ h2 {
   font-size: 2rem;
 }
 
+.back-flex {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 5px;
+  border: 1px rgb(0, 98, 255) solid;
+  border-radius: 0.5rem;
+}
+
 .charts {
   display: grid;
   grid-template-columns: 1fr;
@@ -38,6 +47,8 @@ h2 {
 
 .charts-card {
   margin-bottom: 20px;
+  margin-left: 5rem;
+  margin-right: 5rem;
   padding: 25px;
 }
 
@@ -45,6 +56,11 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.apexcharts-tooltip {
+  background: #f3f3f3;
+  color: black;
 }
 
 .header {
@@ -62,8 +78,9 @@ h2 {
 }
 
 a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
+  font-size: 1.1rem;
 }
 
 #header-text {
