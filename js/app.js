@@ -2,9 +2,19 @@ var options = {
   series: [
     {
       name: "Words",
-      data: [0, 40, 45, 51, 69, 109, 125],
+      data: [],
     },
   ],
+  noData: {
+    text: "Loading...",
+    offsetX: 0,
+    offsetY: -55,
+    style: {
+      color: undefined,
+      fontSize: "26px",
+      fontFamily: undefined,
+    },
+  },
   chart: {
     height: "auto",
     type: "area",
@@ -173,8 +183,6 @@ var options = {
       "2019-09-15",
       "2019-09-16",
       "2019-09-18",
-      "2019-09-19",
-      "2019-09-20",
     ],
   },
   tooltip: {
@@ -238,3 +246,25 @@ var options = {
 
 var chart = new ApexCharts(document.querySelector("#area-chart"), options);
 chart.render();
+
+// var url = "https://www.glennandersson.com/Migaku-word-count/words.json";
+
+// $.getJSON(url, function (response) {
+//   chart.updateSeries([
+//     {
+//       name: "Sales",
+//       data: response,
+//     },
+//   ]);
+// });
+
+fetch("https://www.glennandersson.com/Migaku-word-count/words.json")
+  .then((response) => response.json())
+  .then((data) => {
+    options.series[0].data = data;
+    chart.updateSeries(options.series);
+  })
+  .then(console.log(options.series))
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
