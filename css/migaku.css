@@ -2,6 +2,7 @@ body {
   background: linear-gradient(180deg, #26006c 0%, #000000 100%);
   margin: 0;
   height: 100vh;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -64,6 +65,7 @@ h3 {
   padding: 25px;
   padding-top: 0;
   padding-left: 0px;
+  margine
 }
 
 .chart-title {
