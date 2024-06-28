@@ -27,6 +27,19 @@ h2 {
   font-size: 2rem;
 }
 
+h3 {
+  text-align: center;
+  background: linear-gradient(to top, rgb(250, 0, 0), rgb(255, 106, 0));
+  -webkit-background-lip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: 1px 1px 0px rgba(0, 238, 255, 0.862); */
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+  font-size: 2rem;
+}
+
 .back-flex {
   position: absolute;
   top: 1rem;
@@ -46,8 +59,10 @@ h2 {
 }
 
 .charts-card {
+  margin-top: 0;
   margin-bottom: 20px;
   padding: 25px;
+  padding-top: 0;
   padding-left: 0px;
 }
 

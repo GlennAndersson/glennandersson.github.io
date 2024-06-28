@@ -1,26 +1,3 @@
-// async function getWordsData() {
-//   try {
-//     const response = await fetch(
-//       "https://www.glennandersson.com/Migaku-word-count/words.json"
-//     );
-//     const data = await response.json();
-//     return data.map((item) => {
-//       return {
-//         date: item.Date, // assuming the JSON includes a 'Date' field
-//         words: item.Words,
-//       };
-//     });
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-//   }
-// }
-
-// getWordsData().then((wordsData) => {
-//   options.series[0].data = wordsData.map((item) => item.words);
-//   options.xaxis.categories = wordsData.map((item) => item.date);
-//   chart.updateSeries(options.series);
-// });
-
 async function getWordsArray() {
   try {
     const response = await fetch(
@@ -57,28 +34,15 @@ getDatesArray().then((datesArray) => {
   chart.updateOptions(options);
 });
 
-//put this into the API
-// const dates = [
-//   {
-//     Date: "2019-09-12",
-//   },
-//   {
-//     Date: "2019-09-14",
-//   },
-//   {
-//     Date: "2019-09-15",
-//   },
-//   {
-//     Date: "2019-09-16",
-//   },
-//   {
-//     Date: "2019-09-18",
-//   },
-// ];
-
-// dates.map((date) => date.Date)
-
-// console.log(dates);
+const apiUrl = "https://www.glennandersson.com/Migaku-word-count/words.json";
+fetch(apiUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    const latestEntry = data[data.length - 1];
+    const wordsCount = latestEntry.Words;
+    document.getElementById("words-counter").textContent = wordsCount;
+  })
+  .catch((error) => console.error("Error:", error));
 
 var options = {
   series: [
