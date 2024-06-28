@@ -65,7 +65,6 @@ h3 {
   padding: 25px;
   padding-top: 0;
   padding-left: 0px;
-  margine
 }
 
 .chart-title {
@@ -301,5 +300,49 @@ a {
   #flexThree {
     margin-right: 3.25rem;
     margin-left: 1rem;
+  }
+}
+
+@media screen and (max-height: 1100px) {
+  .charts {
+    max-width: 65rem;
+  }
+}
+
+@media screen and (max-height: 975px) {
+  .charts {
+    max-width: 55rem;
+  }
+}
+
+@media screen and (max-height: 875px) {
+  .charts {
+    max-width: 50rem;
+  }
+}
+@media screen and (max-height: 830px) {
+  .charts {
+    max-width: 45rem;
+  }
+}
+
+@media screen and (max-height: 775px) {
+  .charts {
+    max-width: 40rem;
+  }
+}
+@media screen and (max-height: 720px) {
+  .charts {
+    max-width: 35rem;
+  }
+}
+@media screen and (max-height: 675px) {
+  .charts {
+    max-width: 30rem;
+  }
+}
+@media screen and (max-height: 625px) {
+  .charts {
+    max-width: 25rem;
   }
 }
