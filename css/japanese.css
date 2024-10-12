@@ -1,8 +1,13 @@
-body {
-  background: linear-gradient(180deg, #26006c 0%, #000000 100%);
-  margin: 0;
-  height: 100vh;
-  background-attachment: fixed;
+body {  
+    background: linear-gradient(180deg, #26006c 0%, #000000 100%);
+    background-size: cover;
+    background-attachment: scroll; 
+    margin: 0;  
+    height: 100vh;  
+}
+
+html, body { 
+    height: 100%; 
 }
 
 h1 {
