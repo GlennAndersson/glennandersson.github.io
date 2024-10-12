@@ -1,14 +1,14 @@
 body {  
     background: linear-gradient(180deg, #26006c 0%, #000000 100%);
     background-attachment: fixed;
-    background-size: cover;
-    margin: 0;
-    height: 100vh;
-    overflow: hidden; 
+    margin: 0;  
+    height: 100vh;  
+    background-size: cover; 
 }
 
 html, body { 
     height: 100%;
+    overflow: auto;
 }
 
 h1 {
