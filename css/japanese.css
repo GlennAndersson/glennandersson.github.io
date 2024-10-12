@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(180deg, #26006c 0%, #000000 100%);
+    margin: 0;
 }
 
 h1 {
