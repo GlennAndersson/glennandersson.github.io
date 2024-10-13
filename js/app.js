@@ -1,7 +1,7 @@
 async function getWordsArray() {
   try {
     const response = await fetch(
-      "https://www.glennandersson.com/Migaku-word-count/words.json"
+      "https://www.glennandersson.com/Migaku-word-count/words.json",
     );
     const data = await response.json();
     const jsonData = JSON.stringify(data, null, 4);
@@ -19,7 +19,7 @@ getWordsArray().then((wordsArray) => {
 async function getDatesArray() {
   try {
     const response = await fetch(
-      "https://www.glennandersson.com/Migaku-word-count/words.json"
+      "https://www.glennandersson.com/Migaku-word-count/words.json",
     );
     const data = await response.json();
     const jsonData = JSON.stringify(data, null, 4);
@@ -40,7 +40,9 @@ fetch(apiUrl)
   .then((data) => {
     const latestEntry = data[data.length - 1];
     const wordsCount = latestEntry.Words;
+    const kanjiCount = latestEntry.Kanji;
     document.getElementById("words-counter").textContent = wordsCount;
+    document.getElementById("kanji-counter").textContent = kanjiCount;
   })
   .catch((error) => console.error("Error:", error));
 
