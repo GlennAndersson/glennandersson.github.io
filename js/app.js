@@ -285,3 +285,12 @@ var options = {
 
 var chart = new ApexCharts(document.querySelector("#area-chart"), options);
 chart.render();
+
+fetch(apiUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    const latestEntry = data[data.length - 1];
+    const kanjiCount = latestEntry.Kanji;
+    document.getElementById("kanji-counter").textContent = kanjiCount;
+  })
+  .catch((error) => console.error("Error:", error));
