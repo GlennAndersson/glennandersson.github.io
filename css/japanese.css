@@ -5,6 +5,9 @@ html, body {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(180deg, #120038 0%, #000000 100%);
   background-size: cover;
   background-repeat: no-repeat;
@@ -178,7 +181,7 @@ a {
 .grid-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 7rem;
   max-width: 600px;
