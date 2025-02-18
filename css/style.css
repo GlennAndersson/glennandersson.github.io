@@ -5,9 +5,6 @@ html, body {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(180deg, #120038 0%, #000000 100%);
   background-size: cover;
   background-repeat: no-repeat;
@@ -119,7 +116,244 @@ a {
   justify-content: space-around;
   position: fixed;
   font-size: 1.75rem;
-  font-weight: 300;
+  font-weight: 300;html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #120038 0%, #000000 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 2rem;
+  margin-right: 2rem;html, body {html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #120038 0%, #000000 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  color: rgb(231, 230, 236);
+  text-shadow: 2px 2px 4px rgb(191, 0, 255);
+}
+
+h2 {
+  text-align: center;
+  background: linear-gradient(to top, rgb(0, 217, 255), rgb(0, 98, 255));
+  -webkit-background-lip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: 1px 1px 0px rgba(0, 238, 255, 0.862); */
+  margin-top: 4rem;
+  font-size: 2rem;
+}
+
+h3 {
+  text-align: center;
+  background: linear-gradient(to top, rgb(250, 0, 0), rgb(255, 106, 0));
+  -webkit-background-lip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: 1px 1px 0px rgba(0, 238, 255, 0.862); */
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.back-flex {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 5px;
+  border: 1px rgb(0, 98, 255) solid;
+  border-radius: 0.5rem;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
+}
+
+.charts-card {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 25px;
+  padding-top: 0;
+  padding-left: 0px;
+}
+
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #120038 0%, #000000 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  color: rgb(231, 230, 236);
+  text-shadow: 2px 2px 4px rgb(191, 0, 255);
+}
+
+h2 {
+  text-align: center;
+  background: linear-gradient(to top, rgb(0, 217, 255), rgb(0, 98, 255));
+  -webkit-background-lip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: 1px 1px 0px rgba(0, 238, 255, 0.862); */
+  margin-top: 4rem;
+  font-size: 2rem;
+}
+
+h3 {
+  text-align: center;
+  background: linear-gradient(to top, rgb(250, 0, 0), rgb(255, 106, 0));
+  -webkit-background-lip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: 1px 1px 0px rgba(0, 238, 255, 0.862); */
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.back-flex {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 5px;
+  border: 1px rgb(0, 98, 255) solid;
+  border-radius: 0.5rem;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
+}
+
+.charts-card {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 25px;
+  padding-top: 0;
+  padding-left: 0px;
+}
+
+
+  color: rgb(231, 230, 236);
+  text-shadow: 2px 2px 4px rgb(191, 0, 255);
+}
+
+h2 {
+  text-align: center;
+  background: linear-gradient(to top, rgb(0, 217, 255), rgb(0, 98, 255));
+  -webkit-background-lip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: 1px 1px 0px rgba(0, 238, 255, 0.862); */
+  margin-top: 4rem;
+  font-size: 2rem;
+}
+
+h3 {
+  text-align: center;
+  background: linear-gradient(to top, rgb(250, 0, 0), rgb(255, 106, 0));
+  -webkit-background-lip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: 1px 1px 0px rgba(0, 238, 255, 0.862); */
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.back-flex {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 5px;
+  border: 1px rgb(0, 98, 255) solid;
+  border-radius: 0.5rem;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
+}
+
+.charts-card {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 25px;
+  padding-top: 0;
+  padding-left: 0px;
+}
+
+
   width: 100%;
   max-width: 1500px;
   top: 0;
@@ -181,7 +415,7 @@ a {
 .grid-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 7rem;
   max-width: 600px;
