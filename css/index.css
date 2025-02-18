@@ -168,7 +168,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: space-around;
+  align-items: stretch;
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
