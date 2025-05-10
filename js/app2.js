@@ -5,7 +5,7 @@ async function getWordsArray() {
     );
     const data = await response.json();
     const jsonData = JSON.stringify(data, null, 4);
-    return data.map((item) => item.Dividend);
+    return data.map((item) => item.TotalDividend);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -39,7 +39,7 @@ fetch(apiUrl)
   .then((response) => response.json())
   .then((data) => {
     const latestEntry = data[data.length - 1];
-    const wordsCount = latestEntry.Dividend;
+    const wordsCount = latestEntry.TotalDividend;
     document.getElementById("words-counter").textContent = wordsCount;
   })
   .catch((error) => console.error("Error:", error));
@@ -226,15 +226,28 @@ var options = {
     categories: [],
   },
   tooltip: {
-    x: {
-      format: "yyyy/MM/dd",
-    },
-    theme: false,
-    style: {
-      fontSize: "18px",
-      fontFamily: undefined,
-    },
-  },
+              x: {
+                format: "MMM yyyy", // Displays Month and Year
+              },
+              theme: "dark", // Changed to dark theme for better visibility
+              style: {
+                fontSize: "16px", // Adjusted font size for better readability
+                fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
+                fontWeight: "bold", // Added bold text for emphasis
+                color: "#ffffff", // Set text color to white for contrast
+                padding: 0, // Remove extra padding
+                textAlign: "left", // Align text to the left
+              },
+              marker: {
+                show: false, // Display marker in tooltip
+              },
+              y: {
+                formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
+                title: {
+            formatter: (seriesName) => `${seriesName}`, // Add title to tooltip
+                },
+              },
+            },
   // tooltip: {
   //   enabled: true,
   //   enabledOnSeries: undefined,
@@ -286,11 +299,215 @@ var options = {
 var chart = new ApexCharts(document.querySelector("#area-chart"), options);
 chart.render();
 
-fetch(apiUrl)
+// Monthly Chart
+
+var options2 = {
+  chart: {
+    type: 'bar',
+    foreColor: "white",
+    toolbar: {
+      show: false // Removes the download button
+    }
+  },
+  series: [{
+    name: 'Dividends',
+    data: []
+  }],
+  plotOptions: {
+    bar: {
+      colors: {
+        ranges: [{
+          from: 0,
+          to: 1000,
+           // Gradient will override this
+            }]
+                },
+                distributed: false
+              }
+            },
+            tooltip: {
+              x: {
+                format: "MMM yyyy",
+              },
+              theme: "dark", // Changed to dark theme for better visibility
+              style: {
+                fontSize: "16px", // Adjusted font size for better readability
+                fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
+                fontWeight: "bold", // Added bold text for emphasis
+                color: "#ffffff", // Set text color to white for contrast
+                padding: 0, // Remove extra padding
+                textAlign: "left", // Align text to the left
+              },
+              marker: {
+                show: false, // Display marker in tooltip
+              },
+              y: {
+                formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
+                title: {
+            formatter: (seriesName) => `${seriesName}`, // Add title to tooltip
+                },
+              },
+            },
+            xaxis: {
+              type: 'datetime',
+              labels: {
+                format: 'MMM yyyy', // Displays Month and Year
+      showDuplicates: false, // Prevents duplicate labels
+      style: {
+        colors: [],
+        fontSize: '14px',
+        fontFamily: 'Helvetica, Arial, sans-serif',
+        fontWeight: 400,
+      },
+    },
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'dark',
+      type: 'vertical',
+      shadeIntensity: 0.5,
+      // Green at the top
+      inverseColors: false,
+      opacityFrom: 1,
+      opacityTo: 1,
+      stops: [0, 100],
+      colorStops: [
+        {
+          offset: 50,
+          color: '#06c706', // Dark blue at the bottom
+          opacity: 0.9
+        },
+        {
+          offset: 100,
+          color: '#004d00', // Green at the top
+          opacity: 0.8
+        }
+      ]
+    }
+  }
+};
+
+fetch("https://www.glennandersson.com/Migaku-word-count/dividends.json")
   .then((response) => response.json())
   .then((data) => {
-    const latestEntry = data[data.length - 1];
-    const kanjiCount = latestEntry.Kanji;
-    document.getElementById("kanji-counter").textContent = kanjiCount;
+    options2.series[0].data = data.map((item) => ({
+      x: item.Date,
+      y: item.MonthlyDividend
+    }));
+    columnchart.updateOptions(options2);
   })
-  .catch((error) => console.error("Error:", error));
+  .catch((error) => console.error("Error fetching data:", error));
+var columnchart = new ApexCharts(document.querySelector("#column-chart"), options2);
+columnchart.render();
+
+// Yearly Chart
+
+var options3 = {
+  chart: {
+    type: 'bar',
+    foreColor: "white",
+    toolbar: {
+      show: false // Removes the download button
+    }
+  },
+  series: [{
+    name: 'Dividends',
+    data: []
+  }],
+  plotOptions: {
+    bar: {
+      colors: {
+        ranges: [{
+          from: 0,
+          to: 1000,
+           // Gradient will override this
+            }]
+                },
+                distributed: false
+              }
+            },
+            tooltip: {
+              x: {
+                format: "MMM yyyy",
+              },
+              theme: "dark", // Changed to dark theme for better visibility
+              style: {
+                fontSize: "16px", // Adjusted font size for better readability
+                fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
+                fontWeight: "bold", // Added bold text for emphasis
+                color: "#ffffff", // Set text color to white for contrast
+                padding: 0, // Remove extra padding
+                textAlign: "left", // Align text to the left
+              },
+              marker: {
+                show: false, // Display marker in tooltip
+              },
+              y: {
+                formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
+                title: {
+            formatter: (seriesName) => `${seriesName}`, // Add title to tooltip
+                },
+              },
+            },
+            xaxis: {
+              type: 'datetime',
+              labels: {
+                format: 'yyyy', // Displays Month and Year
+      showDuplicates: false, // Prevents duplicate labels
+      style: {
+        colors: [],
+        fontSize: '14px',
+        fontFamily: 'Helvetica, Arial, sans-serif',
+        fontWeight: 400,
+      },
+    },
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'dark',
+      type: 'vertical',
+      shadeIntensity: 0.5,
+      // Green at the top
+      inverseColors: false,
+      opacityFrom: 1,
+      opacityTo: 1,
+      stops: [0, 100],
+      colorStops: [
+        {
+          offset: 50,
+          color: '#06c706', // Dark blue at the bottom
+          opacity: 0.9
+        },
+        {
+          offset: 100,
+          color: '#004d00', // Green at the top
+          opacity: 0.8
+        }
+      ]
+    }
+  }
+};
+
+fetch("https://www.glennandersson.com/Migaku-word-count/dividends.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const yearlyData = data.reduce((acc, item) => {
+      const year = new Date(item.Date).getFullYear();
+      if (!acc[year]) {
+      acc[year] = 0;
+      }
+      acc[year] = item.TotalDividend;
+      return acc;
+    }, {});
+
+    options3.series[0].data = Object.entries(yearlyData).map(([year, totalDividend]) => ({
+      x: year,
+      y: totalDividend
+    }));
+    columnchartyearly.updateOptions(options3);
+  })
+  .catch((error) => console.error("Error fetching data:", error));
+var columnchartyearly = new ApexCharts(document.querySelector("#column-chart-yearly"), options2);
+columnchartyearly.render();
