@@ -212,7 +212,7 @@ var options = {
       rotateAlways: false,
       hideOverlappingLabels: true,
       showDuplicates: false,
-      trim: false,
+    trim: false,
       minHeight: undefined,
       maxHeight: 120,
       style: {
