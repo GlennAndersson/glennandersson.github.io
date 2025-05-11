@@ -403,6 +403,7 @@ fetch("https://www.glennandersson.com/Migaku-word-count/dividends.json")
       x: item.Date,
       y: item.MonthlyDividend
     }));
+    options2.dataLabels.enabled = false; // Disable rendering the amount in the bars
     columnchart.updateOptions(options2);
   })
   .catch((error) => console.error("Error fetching data:", error));
@@ -502,9 +503,6 @@ var options3 = {
       colors: ['#fff'],
       fontSize: '20px',
       fontWeight: 'bold'
-    },
-    formatter: function (val) {
-      return val + " SEK";
     }
   }
 };
