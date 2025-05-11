@@ -227,13 +227,20 @@ var options = {
   },
   tooltip: {
     x: {
-      format: "yyyy/MM/dd",
-    },
-    theme: false,
-    style: {
-      fontSize: "18px",
-      fontFamily: undefined,
-    },
+                format: "dd MMM yyyy", // Displays Month and Year
+              },
+              theme: "dark", // Changed to dark theme for better visibility
+              style: {
+                fontSize: "20px", // Adjusted font size for better readability
+                fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
+                fontWeight: "bold", // Added bold text for emphasis
+                color: "#ffffff", // Set text color to white for contrast
+                padding: 0, // Remove extra padding
+                textAlign: "left", // Align text to the left
+              },
+              marker: {
+                show: false, // Display marker in tooltip
+              },
   },
   // tooltip: {
   //   enabled: true,

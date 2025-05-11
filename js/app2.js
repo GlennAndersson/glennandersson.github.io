@@ -231,7 +231,7 @@ var options = {
               },
               theme: "dark", // Changed to dark theme for better visibility
               style: {
-                fontSize: "16px", // Adjusted font size for better readability
+                fontSize: "18px", // Adjusted font size for better readability
                 fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
                 fontWeight: "bold", // Added bold text for emphasis
                 color: "#ffffff", // Set text color to white for contrast
@@ -244,7 +244,7 @@ var options = {
               y: {
                 formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
                 title: {
-            formatter: (seriesName) => `${seriesName}`, // Add title to tooltip
+            formatter: () => ``, // Remove title to tooltip
                 },
               },
             },
@@ -344,7 +344,7 @@ var options2 = {
               y: {
                 formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
                 title: {
-            formatter: (seriesName) => `${seriesName}`, // Add title to tooltip
+            formatter: () => ``, // Remove title to tooltip
                 },
               },
             },
@@ -355,7 +355,7 @@ var options2 = {
       showDuplicates: false, // Prevents duplicate labels
       style: {
         colors: [],
-        fontSize: '14px',
+        fontSize: '16px',
         fontFamily: 'Helvetica, Arial, sans-serif',
         fontWeight: 400,
       },
@@ -384,6 +384,14 @@ var options2 = {
           opacity: 0.8
         }
       ]
+    }
+  },
+  dataLabels: {
+    enabled: true,
+    style: {
+      colors: ['#fff'],
+      fontSize: '18px',
+      fontWeight: 'normal'
     }
   }
 };
@@ -429,11 +437,11 @@ var options3 = {
             },
             tooltip: {
               x: {
-                format: "MMM yyyy",
+                format: "yyyy",
               },
               theme: "dark", // Changed to dark theme for better visibility
               style: {
-                fontSize: "16px", // Adjusted font size for better readability
+                fontSize: "18px", // Adjusted font size for better readability
                 fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
                 fontWeight: "bold", // Added bold text for emphasis
                 color: "#ffffff", // Set text color to white for contrast
@@ -446,7 +454,7 @@ var options3 = {
               y: {
                 formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
                 title: {
-            formatter: (seriesName) => `${seriesName}`, // Add title to tooltip
+            formatter: () => ``, // Remove title to tooltip
                 },
               },
             },
@@ -457,7 +465,7 @@ var options3 = {
       showDuplicates: false, // Prevents duplicate labels
       style: {
         colors: [],
-        fontSize: '14px',
+        fontSize: '18px',
         fontFamily: 'Helvetica, Arial, sans-serif',
         fontWeight: 400,
       },
@@ -486,6 +494,17 @@ var options3 = {
           opacity: 0.8
         }
       ]
+    }
+  },
+  dataLabels: {
+    enabled: true,
+    style: {
+      colors: ['#fff'],
+      fontSize: '20px',
+      fontWeight: 'bold'
+    },
+    formatter: function (val) {
+      return val + " SEK";
     }
   }
 };
