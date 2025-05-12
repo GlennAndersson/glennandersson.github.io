@@ -1,7 +1,7 @@
 async function getWordsArray() {
   try {
     const response = await fetch(
-      "https://www.glennandersson.com/Migaku-word-count/dividends.json",
+      "https://ga-api.github.io/WebData/dividends.json",
     );
     const data = await response.json();
     const jsonData = JSON.stringify(data, null, 4);
@@ -19,7 +19,7 @@ getWordsArray().then((wordsArray) => {
 async function getDatesArray() {
   try {
     const response = await fetch(
-      "https://www.glennandersson.com/Migaku-word-count/dividends.json",
+      "https://ga-api.github.io/WebData/dividends.json",
     );
     const data = await response.json();
     const jsonData = JSON.stringify(data, null, 4);
@@ -34,7 +34,7 @@ getDatesArray().then((datesArray) => {
   chart.updateOptions(options);
 });
 
-const apiUrl = "https://www.glennandersson.com/Migaku-word-count/dividends.json";
+const apiUrl = "https://ga-api.github.io/WebData/dividends.json";
 fetch(apiUrl)
   .then((response) => response.json())
   .then((data) => {
@@ -396,7 +396,7 @@ var options2 = {
   }
 };
 
-fetch("https://www.glennandersson.com/Migaku-word-count/dividends.json")
+fetch("https://ga-api.github.io/WebData/dividends.json")
   .then((response) => response.json())
   .then((data) => {
     options2.series[0].data = data.map((item) => ({
@@ -507,7 +507,7 @@ var options3 = {
   }
 };
 
-fetch("https://www.glennandersson.com/Migaku-word-count/dividends.json")
+fetch("https://ga-api.github.io/WebData/dividends.json")
   .then((response) => response.json())
   .then((data) => {
     const yearlyData = data.reduce((acc, item) => {

@@ -1,7 +1,7 @@
 async function getWordsArray() {
   try {
     const response = await fetch(
-      "https://www.glennandersson.com/Migaku-word-count/words.json",
+      "https://ga-api.github.io/WebData/words.json",
     );
     const data = await response.json();
     const jsonData = JSON.stringify(data, null, 4);
@@ -19,7 +19,7 @@ getWordsArray().then((wordsArray) => {
 async function getDatesArray() {
   try {
     const response = await fetch(
-      "https://www.glennandersson.com/Migaku-word-count/words.json",
+      "https://ga-api.github.io/WebData/words.json",
     );
     const data = await response.json();
     const jsonData = JSON.stringify(data, null, 4);
@@ -34,7 +34,7 @@ getDatesArray().then((datesArray) => {
   chart.updateOptions(options);
 });
 
-const apiUrl = "https://www.glennandersson.com/Migaku-word-count/words.json";
+const apiUrl = "https://ga-api.github.io/WebData/words.json";
 fetch(apiUrl)
   .then((response) => response.json())
   .then((data) => {
