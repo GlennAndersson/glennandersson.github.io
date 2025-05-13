@@ -351,7 +351,7 @@ var options2 = {
             xaxis: {
               type: 'datetime',
               labels: {
-                format: 'MMM yy', // Displays Month and Year
+                format: 'yyyy', // Displays Month and Year
       showDuplicates: false, // Prevents duplicate labels
       style: {
         colors: [],
