@@ -327,7 +327,7 @@ var options2 = {
             },
             tooltip: {
               x: {
-                format: "MMM yyyy",
+                format: "MMM 'yy",
               },
               theme: "dark", // Changed to dark theme for better visibility
               style: {
