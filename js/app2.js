@@ -327,7 +327,7 @@ var options2 = {
             },
             tooltip: {
               x: {
-                format: "MMM 'yy",
+                format: "MMM yyyy",
               },
               theme: "dark", // Changed to dark theme for better visibility
               style: {
@@ -351,7 +351,7 @@ var options2 = {
             xaxis: {
               type: 'datetime',
               labels: {
-                format: 'MMM yyyy', // Displays Month and Year
+                format: 'MMM 'yy', // Displays Month and Year
       showDuplicates: false, // Prevents duplicate labels
       style: {
         colors: [],
