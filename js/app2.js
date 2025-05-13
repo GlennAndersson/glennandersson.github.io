@@ -78,15 +78,6 @@ var options = {
   stroke: {
     curve: "smooth",
   },
-  // theme: {
-  //   mode: "dark",
-  //   monochrome: {
-  //     enabled: true,
-  //     color: "#008FFB",
-  //     shadeTo: "dark",
-  //     shadeIntensity: 0.65,
-  //   },
-  // },
   fill: {
     type: "gradient",
     gradient: {
@@ -144,28 +135,6 @@ var options = {
       left: 5,
     },
   },
-
-  // markers: {
-  //   size: 10,
-  //   colors: undefined,
-  //   strokeColors: "#fff",
-  //   strokeWidth: 2,
-  //   strokeOpacity: 0.9,
-  //   strokeDashArray: 0,
-  //   fillOpacity: 1,
-  //   discrete: [],
-  //   shape: "circle",
-  //   radius: 2,
-  //   offsetX: 0,
-  //   offsetY: 0,
-  //   onClick: undefined,
-  //   onDblClick: undefined,
-  //   showNullDataPoints: true,
-  //   hover: {
-  //     size: undefined,
-  //     sizeOffset: 3,
-  //   },
-  // },
   stroke: {
     show: true,
     curve: "smooth",
@@ -248,52 +217,6 @@ var options = {
                 },
               },
             },
-  // tooltip: {
-  //   enabled: true,
-  //   enabledOnSeries: undefined,
-  //   shared: true,
-  //   followCursor: false,
-  //   intersect: false,
-  //   inverseOrder: false,
-  //   custom: undefined,
-  //   hideEmptySeries: true,
-  //   fillSeriesColor: false,
-  //   theme: false,
-  //   style: {
-  //     fontSize: "12px",
-  //     fontFamily: undefined,
-  //   },
-  //   onDatasetHover: {
-  //     highlightDataSeries: false,
-  //   },
-  //   x: {
-  //     show: true,
-  //     format: "dd MMM",
-  //     formatter: undefined,
-  //   },
-  //   y: {
-  //     formatter: undefined,
-  //     title: {
-  //       formatter: (seriesName) => seriesName,
-  //     },
-  //   },
-  //   z: {
-  //     formatter: undefined,
-  //     title: "Size: ",
-  //   },
-  //   marker: {
-  //     show: true,
-  //   },
-  //   items: {
-  //     display: flex,
-  //   },
-  //   fixed: {
-  //     enabled: false,
-  //     position: "topRight",
-  //     offsetX: 0,
-  //     offsetY: 0,
-  //   },
-  // },
 };
 
 var chart = new ApexCharts(document.querySelector("#area-chart"), options);
@@ -319,47 +242,61 @@ var options2 = {
         ranges: [{
           from: 0,
           to: 1000,
-           // Gradient will override this
-            }]
-                },
-                distributed: false
-              }
-            },
-            tooltip: {
-              x: {
-                format: "MMM yyyy",
-              },
-              theme: "dark", // Changed to dark theme for better visibility
-              style: {
-                fontSize: "16px", // Adjusted font size for better readability
-                fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
-                fontWeight: "bold", // Added bold text for emphasis
-                color: "#ffffff", // Set text color to white for contrast
-                padding: 0, // Remove extra padding
-                textAlign: "left", // Align text to the left
-              },
-              marker: {
-                show: false, // Display marker in tooltip
-              },
-              y: {
-                formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
-                title: {
-            formatter: () => ``, // Remove title to tooltip
-                },
-              },
-            },
-            xaxis: {
-              type: 'datetime',
-              labels: {
-                format: 'yyyy', // Displays Month and Year
-      showDuplicates: false, // Prevents duplicate labels
-      style: {
-        colors: [],
-        fontSize: '16px',
-        fontFamily: 'Helvetica, Arial, sans-serif',
-        fontWeight: 400,
+          // Gradient will override this
+        }]
+      },
+      distributed: false
+    }
+  },
+  tooltip: {
+    x: {
+      format: "MMM yyyy",
+    },
+    theme: "dark", // Changed to dark theme for better visibility
+    style: {
+      fontSize: "18px", // Adjusted font size for better readability
+      fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
+      fontWeight: "bold", // Added bold text for emphasis
+      color: "#ffffff", // Set text color to white for contrast
+      padding: 0, // Remove extra padding
+      textAlign: "left", // Align text to the left
+    },
+    marker: {
+      show: false, // Display marker in tooltip
+    },
+    y: {
+      formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
+      title: {
+        formatter: () => ``, // Remove title to tooltip
       },
     },
+  },
+  xaxis: {
+    type: 'category',
+    labels: {
+      formatter: (value) => {
+      // Format the label as 'Jan 2025'
+      const date = new Date(value);
+      return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    },
+    rotate: -45, // Rotate labels to prevent overlap
+    style: {
+      colors: [], // Default colors
+      fontSize: '0px',
+      fontFamily: 'Helvetica, Arial, sans-serif',
+      fontWeight: 0,
+      },
+    },
+    group: {
+      style: {
+        fontSize: '18px',
+        fontWeight: 500,
+        colors: ['#ffffff']
+      },
+      groups: [
+        {},
+      ]
+    }
   },
   fill: {
     type: 'gradient',
@@ -367,7 +304,6 @@ var options2 = {
       shade: 'dark',
       type: 'vertical',
       shadeIntensity: 0.5,
-      // Green at the top
       inverseColors: false,
       opacityFrom: 1,
       opacityTo: 1,
@@ -399,14 +335,33 @@ var options2 = {
 fetch("https://ga-api.github.io/WebData/dividends.json")
   .then((response) => response.json())
   .then((data) => {
+    // Extract unique years and count the number of months for each year
+    const yearMonthCounts = data.reduce((acc, item) => {
+      const year = new Date(item.Date).getFullYear();
+      acc[year] = (acc[year] || 0) + 1; // Count the number of entries per year
+      return acc;
+    }, {});
+
+    // Create the groups dynamically based on the actual number of months per year
+    const groups = Object.entries(yearMonthCounts).map(([year, count]) => ({
+      title: year.toString(),
+      cols: count, // Use the actual number of months for the year
+    }));
+
+    // Update the x-axis group configuration
+    options2.xaxis.group.groups = groups;
+
+    // Map the data for the chart
     options2.series[0].data = data.map((item) => ({
       x: item.Date,
-      y: item.MonthlyDividend
+      y: item.MonthlyDividend,
     }));
     options2.dataLabels.enabled = false; // Disable rendering the amount in the bars
+    // Update the chart with the new options
     columnchart.updateOptions(options2);
   })
   .catch((error) => console.error("Error fetching data:", error));
+
 var columnchart = new ApexCharts(document.querySelector("#column-chart"), options2);
 columnchart.render();
 
@@ -430,47 +385,54 @@ var options3 = {
         ranges: [{
           from: 0,
           to: 1000,
-           // Gradient will override this
-            }]
-                },
-                distributed: false
-              }
-            },
-            tooltip: {
-              x: {
-                format: "yyyy",
-              },
-              theme: "dark", // Changed to dark theme for better visibility
-              style: {
-                fontSize: "18px", // Adjusted font size for better readability
-                fontFamily: "Arial, sans-serif", // Changed font family for a cleaner look
-                fontWeight: "bold", // Added bold text for emphasis
-                color: "#ffffff", // Set text color to white for contrast
-                padding: 0, // Remove extra padding
-                textAlign: "left", // Align text to the left
-              },
-              marker: {
-                show: false, // Display marker in tooltip
-              },
-              y: {
-                formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
-                title: {
-            formatter: () => ``, // Remove title to tooltip
-                },
-              },
-            },
-            xaxis: {
-              type: 'datetime',
-              labels: {
-                format: 'yyyy', // Displays Month and Year
-      showDuplicates: false, // Prevents duplicate labels
+        }]
+      },
+      distributed: false
+    }
+  },
+  tooltip: {
+    x: {
+      format: "yyyy", // Display year in the tooltip
+    },
+    theme: "dark",
+    style: {
+      fontSize: "18px",
+      fontFamily: "Arial, sans-serif",
+      fontWeight: "bold",
+      color: "#ffffff",
+      padding: 0,
+      textAlign: "left",
+    },
+    marker: {
+      show: false,
+    },
+    y: {
+      formatter: (value) => `${value} SEK`, // Format Y-axis values with currency
+      title: {
+        formatter: () => ``,
+      },
+    },
+  },
+  xaxis: {
+    type: 'category',
+    labels: {
+      formatter: (value) => value, // Display year as is
+      rotate: -45, // Rotate labels to prevent overlap
       style: {
         colors: [],
-        fontSize: '18px',
+        fontSize: '0px',
         fontFamily: 'Helvetica, Arial, sans-serif',
         fontWeight: 400,
       },
     },
+    group: {
+      style: {
+        fontSize: '18px',
+        fontWeight: 500,
+        colors: ['#ffffff']
+      },
+      groups: [] // Groups will be dynamically updated
+    }
   },
   fill: {
     type: 'gradient',
@@ -478,7 +440,6 @@ var options3 = {
       shade: 'dark',
       type: 'vertical',
       shadeIntensity: 0.5,
-      // Green at the top
       inverseColors: false,
       opacityFrom: 1,
       opacityTo: 1,
@@ -486,12 +447,12 @@ var options3 = {
       colorStops: [
         {
           offset: 50,
-          color: '#06c706', // Dark blue at the bottom
+          color: '#06c706',
           opacity: 0.9
         },
         {
           offset: 100,
-          color: '#004d00', // Green at the top
+          color: '#004d00',
           opacity: 0.8
         }
       ]
@@ -501,8 +462,8 @@ var options3 = {
     enabled: true,
     style: {
       colors: ['#fff'],
-      fontSize: '20px',
-      fontWeight: 'bold'
+      fontSize: '22px',
+      fontWeight: 'normal'
     }
   }
 };
@@ -510,21 +471,35 @@ var options3 = {
 fetch("https://ga-api.github.io/WebData/dividends.json")
   .then((response) => response.json())
   .then((data) => {
+    // Aggregate yearly data
     const yearlyData = data.reduce((acc, item) => {
       const year = new Date(item.Date).getFullYear();
       if (!acc[year]) {
-      acc[year] = 0;
+        acc[year] = 0;
       }
-      acc[year] = item.TotalDividend;
+      acc[year] = item.TotalDividend; // Sum up dividends for each year
       return acc;
     }, {});
 
+    // Create the groups dynamically based on the unique years
+    const groups = Object.keys(yearlyData).map((year) => ({
+      title: year.toString(), // Use the year as the group title
+      cols: 1, // Use 1 column per year
+    }));
+
+    // Update the x-axis group configuration
+    options3.xaxis.group.groups = groups;
+
+    // Map the aggregated yearly data to the chart format
     options3.series[0].data = Object.entries(yearlyData).map(([year, totalDividend]) => ({
       x: year,
-      y: totalDividend
+      y: totalDividend,
     }));
+
+    // Update the chart with the new options
     columnchartyearly.updateOptions(options3);
   })
   .catch((error) => console.error("Error fetching data:", error));
-var columnchartyearly = new ApexCharts(document.querySelector("#column-chart-yearly"), options2);
+
+var columnchartyearly = new ApexCharts(document.querySelector("#column-chart-yearly"), options3);
 columnchartyearly.render();
